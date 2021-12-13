@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 7351730046067655738}
   - component: {fileID: 6260721708625172910}
   - component: {fileID: 8810731413431928556}
+  - component: {fileID: 421890742}
   m_Layer: 0
   m_Name: Tube
-  m_TagString: Untagged
+  m_TagString: Tube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2836480056800642295
 Transform:
   m_ObjectHideFlags: 0
@@ -95,3 +96,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &421890742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808240592437144102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f4c809e99679c41a94cd96e0e0eee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TubeDespawner : MonoBehaviour
 {
 
-    private ObjectPool pool;
+    public ObjectPool pool;
 
 
     private void OnTriggerEnter(Collider other)
