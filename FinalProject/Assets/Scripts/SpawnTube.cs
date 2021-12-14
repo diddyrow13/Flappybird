@@ -30,8 +30,11 @@ public class SpawnTube : MonoBehaviour
 
 
             var gapPos = Random.Range(tubeMin, tubeMax);
-            botTunnel.transform.position = new Vector3(xPos, gapPos - gapSize - botTunnel.transform.localScale.y/2, zPos);
-            topTunnel.transform.position = new Vector3(xPos, gapPos + gapSize + topTunnel.transform.localScale.y/2, zPos);
+            botTunnel.transform.position = new Vector3(xPos, gapPos - gapSize - botTunnel.transform.localScale.y / 2, zPos);
+            topTunnel.transform.position = new Vector3(xPos, gapPos + gapSize + topTunnel.transform.localScale.y / 2, zPos);
+
+            //botTunnel.transform.position = new Vector3(xPos, gapPos, zPos);
+            //topTunnel.transform.position = new Vector3(xPos, gapPos + gapSize + topTunnel.transform.localScale.y, zPos);
         }
     }
 }

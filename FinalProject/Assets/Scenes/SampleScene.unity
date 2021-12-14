@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4994618f39cf9148819ce2c721ccfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 5
+  spawnTime: 3
   gapSize: 5
   tubeMin: 3
   tubeMax: 16
@@ -489,6 +489,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1396646225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1396646226}
+  - component: {fileID: 1396646227}
+  m_Layer: 0
+  m_Name: Game Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1396646226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396646225}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -31.290445, y: 17.714788, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1396646227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396646225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9102c83f125125049915636751cde8b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1562361713
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +547,7 @@ GameObject:
   - component: {fileID: 1562361716}
   - component: {fileID: 1562361715}
   - component: {fileID: 1562361714}
+  - component: {fileID: 1562361718}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -584,6 +631,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1562361718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562361713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e2af0ce0d4e2844a9906243d05826d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1580286329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -591,6 +650,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 421890742, guid: 58ff31eb56b34dd40a289975b41c2d31, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 808240592437144102, guid: 58ff31eb56b34dd40a289975b41c2d31, type: 3}
       propertyPath: m_Name
       value: Tube
@@ -650,6 +713,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1642163218103596752, guid: a4391d650e7be0046a1c7afb462c3f3c, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642163218103596752, guid: a4391d650e7be0046a1c7afb462c3f3c, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1642163218103596757, guid: a4391d650e7be0046a1c7afb462c3f3c, type: 3}
