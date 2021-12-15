@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6260721708625172910}
   - component: {fileID: 8810731413431928556}
   - component: {fileID: 421890742}
+  - component: {fileID: -5842723657436885385}
   m_Layer: 0
   m_Name: Tube
   m_TagString: Tube
@@ -109,3 +110,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+--- !u!114 &-5842723657436885385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808240592437144102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e2af0ce0d4e2844a9906243d05826d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

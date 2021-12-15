@@ -11,6 +11,10 @@ public class GameController : MonoBehaviour
 
     public UnityEvent gameOver;
 
+    private int score = 0;
+
+    public UnityEvent<int> scoreUpdate;
+
     //HAS TO BE STATIC ref class not inst
     public static GameController Instance
     {
@@ -48,6 +52,12 @@ public class GameController : MonoBehaviour
         }
 
         gameOver = new UnityEvent();
+        scoreUpdate = new UnityEvent<int>();
     }
 
+    public void UpdateScore(int org)
+    {
+        score += org;
+        scoreUpdate.Invoke(score);
+    }
 }

@@ -5,16 +5,19 @@ using UnityEngine;
 public class SpawnTube : MonoBehaviour
 {
 
-    private ObjectPool pool;
+    public ObjectPool pool;
     public float spawnTime; // Time in seconds between spawns
     public float gapSize;
     public float tubeMin, tubeMax;
     public  float xPos, zPos;
 
+    public ObjectPool scoreTrigPool;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        pool = GetComponent<ObjectPool>();
+        GameController.Instance.gameOver.AddListener(onDeath); // sub to death event
         StartCoroutine(SpawnAsync());
     }
 
@@ -28,13 +31,20 @@ public class SpawnTube : MonoBehaviour
             var topTunnel = pool.getFromPool();
             var botTunnel = pool.getFromPool();
 
+            var scoreTrig = scoreTrigPool.getFromPool();
 
             var gapPos = Random.Range(tubeMin, tubeMax);
             botTunnel.transform.position = new Vector3(xPos, gapPos - gapSize - botTunnel.transform.localScale.y / 2, zPos);
             topTunnel.transform.position = new Vector3(xPos, gapPos + gapSize + topTunnel.transform.localScale.y / 2, zPos);
+            scoreTrig.transform.position = new Vector3(xPos, gapPos, zPos);
 
             //botTunnel.transform.position = new Vector3(xPos, gapPos, zPos);
             //topTunnel.transform.position = new Vector3(xPos, gapPos + gapSize + topTunnel.transform.localScale.y, zPos);
         }
+    }
+
+    private void onDeath()
+    {
+        StopAllCoroutines(); // prevents spawn of tubes
     }
 }

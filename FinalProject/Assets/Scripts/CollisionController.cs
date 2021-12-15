@@ -25,4 +25,13 @@ public class CollisionController : MonoBehaviour
             GameController.Instance.gameOver.Invoke();
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // Increase score
+            GameController.Instance.UpdateScore(1); // Increases score by 1
+        }
+    }
 }
