@@ -5,14 +5,22 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
 
-    public GameObject prefab;
+    /*
+     * 
+     * https://stackoverflow.com/questions/24442389/trouble-getting-a-game-object-from-object-pool-in-unity
+     * used as ref
+     * Needed since perf degraded significantly after 30ish tubes spawned
+     */
 
-    private Queue<GameObject> pool;
+    public GameObject prefab;   //Has a pool of prefabs for reuse
+
+    private Queue<GameObject> pool; //Using Q for better funcionality vs list
+
     // Start is called before the first frame update
     void Awake()
     {
         pool = new Queue<GameObject>(); //Create pool at beginning
-        growPoolSize(); //Get the objs
+        growPoolSize(); //Get the objs, since empty
     }
 
     // Update is called once per frame
@@ -27,19 +35,19 @@ public class ObjectPool : MonoBehaviour
         // Check if pool is empty
         if (pool.Count <= 1)
         {
-            growPoolSize();
+            growPoolSize(); // Pool empty so grow it
         }
 
-        var nextObj = pool.Dequeue();
-        nextObj.SetActive(true);
-        return nextObj;
+        var nextObj = pool.Dequeue();   // Grab from pool
+        nextObj.SetActive(true);        // Make the obj active
+        return nextObj;             
     }
 
     //
     public void returnToPool(GameObject obj)
     {
-        obj.SetActive(false);
-        pool.Enqueue(obj);
+        obj.SetActive(false);   // Turn object off
+        pool.Enqueue(obj);      // Put obj back in pool Q
     }
 
     //Add to pool size when needed
@@ -48,9 +56,9 @@ public class ObjectPool : MonoBehaviour
         // Create obj and set it in queue
         for (int i = 0; i < 10; i++)
         {
-            var newObj = Instantiate(prefab);
-            newObj.SetActive(false);
-            pool.Enqueue(newObj);
+            var newObj = Instantiate(prefab);   // get ob ready
+            newObj.SetActive(false);            // turn it off
+            pool.Enqueue(newObj);               // Put it in Q
         }
     }
 }

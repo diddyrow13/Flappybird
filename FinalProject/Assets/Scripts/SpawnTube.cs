@@ -5,6 +5,13 @@ using UnityEngine;
 public class SpawnTube : MonoBehaviour
 {
 
+    /*
+     * 
+     * https://stackoverflow.com/questions/25671746/coroutines-unity
+     * used as ref for coroutines
+     * Needed since perf degraded significantly after 30ish tubes spawned
+     */
+
     public ObjectPool pool;
     public float spawnTime; // Time in seconds between spawns
     public float gapSize;

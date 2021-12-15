@@ -51,10 +51,11 @@ public class GameController : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        gameOver = new UnityEvent();
-        scoreUpdate = new UnityEvent<int>();
+        gameOver    = new UnityEvent();         //Create game over event
+        scoreUpdate = new UnityEvent<int>();    //Create score update event
     }
 
+    // Update the score when the player 
     public void UpdateScore(int org)
     {
         score += org;

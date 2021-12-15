@@ -16,6 +16,7 @@ public class CollisionController : MonoBehaviour
         
     }
 
+    // Seeing if the player has hit the ground or tubes
     private void OnCollisionEnter(Collision collision)
     {
         // See if obj is player
@@ -26,6 +27,7 @@ public class CollisionController : MonoBehaviour
         }
     }
 
+    //Seeing if the player has passed the score trigger plane
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
