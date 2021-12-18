@@ -35,15 +35,20 @@ public class SpawnTube : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnTime);
 
-            var topTunnel = pool.getFromPool();
-            var botTunnel = pool.getFromPool();
+            //var topTunnel = pool.getFromPool();
+            //var botTunnel = pool.getFromPool();
 
-            var scoreTrig = scoreTrigPool.getFromPool();
+            var tunnels = pool.getFromPool();
+
+            //var scoreTrig = scoreTrigPool.getFromPool();
 
             var gapPos = Random.Range(tubeMin, tubeMax);
-            botTunnel.transform.position = new Vector3(xPos, gapPos - gapSize - botTunnel.transform.localScale.y / 2, zPos);
-            topTunnel.transform.position = new Vector3(xPos, gapPos + gapSize + topTunnel.transform.localScale.y / 2, zPos);
-            scoreTrig.transform.position = new Vector3(xPos, gapPos, zPos);
+
+            tunnels.transform.position = new Vector3(xPos, gapPos, zPos);
+
+            //botTunnel.transform.position = new Vector3(xPos, gapPos - gapSize - botTunnel.transform.localScale.y / 2, zPos);
+            //topTunnel.transform.position = new Vector3(xPos, gapPos + gapSize + topTunnel.transform.localScale.y / 2, zPos);
+            //scoreTrig.transform.position = new Vector3(xPos, gapPos, zPos);
 
             //botTunnel.transform.position = new Vector3(xPos, gapPos, zPos);
             //topTunnel.transform.position = new Vector3(xPos, gapPos + gapSize + topTunnel.transform.localScale.y, zPos);
