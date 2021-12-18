@@ -16,16 +16,22 @@ public class PlayerController : MonoBehaviour
 
     private bool isAlive = true;
 
+    private Transform boximon;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         GameController.Instance.gameOver.AddListener(onDeath); // Sub to event
+        boximon = transform.GetChild(0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Apply some artifical gravity to prevent exponential upwards movement
+        rb.AddForce(Vector3.down * gravity, gravityForce); // push down y
+
         // See if player is alive
         if (!isAlive)
             return;
@@ -35,9 +41,20 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, playerForce); // jump y
         }
+    }
 
-        // Apply some artifical gravity to prevent exponential upwards movement
-        rb.AddForce(Vector3.down * gravity, gravityForce); // push down y
+
+    //Rotate the player up and down when jumping not jumping
+    private void FixedUpdate()
+    {
+        if (rb.velocity.y > 0) // Player moving up roatte up
+        {
+            boximon.rotation = Quaternion.Lerp(boximon.rotation, Quaternion.Euler(0, 108, 0), 0.2f);
+        }
+        else // Player is falling so rotate DOWN
+        {
+            boximon.rotation = Quaternion.Lerp(boximon.rotation, Quaternion.Euler(60, 108, 0), 0.2f);
+        }
     }
 
     private void onDeath()
