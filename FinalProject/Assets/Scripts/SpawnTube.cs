@@ -18,13 +18,14 @@ public class SpawnTube : MonoBehaviour
     public float tubeMin, tubeMax;
     public  float xPos, zPos;
 
-    public ObjectPool scoreTrigPool;
+    //public ObjectPool scoreTrigPool;
 
 
     // Start is called before the first frame update
     void Start()
     {
         GameController.Instance.gameOver.AddListener(onDeath); // sub to death event
+        xPos = 30f;
         StartCoroutine(SpawnAsync());
     }
 

@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public UnityEvent gameOver;
 
     private int score = 0;
+    private int highScore = 0; // Defualt
 
     public UnityEvent<int> scoreUpdate;
 
@@ -53,6 +54,17 @@ public class GameController : MonoBehaviour
 
         gameOver    = new UnityEvent();         //Create game over event
         scoreUpdate = new UnityEvent<int>();    //Create score update event
+
+        highScore = SaveSystem.LoadScore();
+        gameOver.AddListener(onPlayerDeath);
+    }
+
+    private void onPlayerDeath()
+    {
+        if (score > highScore)
+        {
+            SaveSystem.saveScore(score);
+        }
     }
 
     // Update the score when the player 

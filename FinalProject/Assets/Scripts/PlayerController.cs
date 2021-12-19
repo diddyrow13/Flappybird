@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         GameController.Instance.gameOver.AddListener(onDeath); // Sub to event
-        boximon = transform.GetChild(0);
+        boximon = transform.GetChild(0);    //Child of player whioch is boximon
     }
 
     // Update is called once per frame
