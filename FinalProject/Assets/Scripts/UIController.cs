@@ -8,6 +8,12 @@ public class UIController : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
 
+    public GameObject endScreen;
+
+    public TextMeshProUGUI highScoreText;
+
+    public TextMeshProUGUI endScoretext;
+
 
     //Set the score on the screen after update
     private void scoreUpdate(int score)
@@ -18,11 +24,27 @@ public class UIController : MonoBehaviour
     void Start()
     {
         GameController.Instance.scoreUpdate.AddListener(scoreUpdate); //Sub to score update event
+        GameController.Instance.gameOver.AddListener(onPlayerDeath);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void onPlayerDeath()
+    {
+        highScoreText.text = GameController.Instance.HighScore.ToString(); // Grab the high score
+        endScoretext.text = scoreText.text; // Set end score text
+        scoreText.enabled = false; // Hide prev score
+        endScreen.SetActive(true); // Change to end screen
+
+    }
+
+    //Reload the scene
+    public void Respawn()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }

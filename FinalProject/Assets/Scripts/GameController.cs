@@ -16,6 +16,16 @@ public class GameController : MonoBehaviour
 
     public UnityEvent<int> scoreUpdate;
 
+    public int HighScore // TODO CHECK FOR RACE CONDITION TODO
+    {
+        get
+        {
+            if (score > highScore)
+                return score;
+            return highScore;
+        }
+    }
+
     //HAS TO BE STATIC ref class not inst
     public static GameController Instance
     {
@@ -61,6 +71,7 @@ public class GameController : MonoBehaviour
 
     private void onPlayerDeath()
     {
+        // Save high score if its higher than current high score
         if (score > highScore)
         {
             SaveSystem.saveScore(score);

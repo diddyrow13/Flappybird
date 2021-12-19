@@ -15,7 +15,7 @@ public static class SaveSystem
     public static void saveScore(int highScore)
     {
         var formatter = new BinaryFormatter();
-        var path = Application.persistentDataPath + "/FlappyBirdSaveData.Dom"; //Goto path
+        var path = Application.persistentDataPath + "/FlappyBirdSaveData.User"; //Goto path
         var stream = new FileStream(path, FileMode.Create); //Make file
 
         formatter.Serialize(stream, highScore); // Should be fine for integers
@@ -24,7 +24,7 @@ public static class SaveSystem
 
     public static int LoadScore()
     {
-        var path = Application.persistentDataPath + "/FlappyBirdSaveData.Dom"; //Goto path
+        var path = Application.persistentDataPath + "/FlappyBirdSaveData.User"; //Goto path
         
 
         //Check if there is file in desired path
