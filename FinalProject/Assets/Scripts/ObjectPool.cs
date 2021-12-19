@@ -10,6 +10,14 @@ public class ObjectPool : MonoBehaviour
      * https://stackoverflow.com/questions/24442389/trouble-getting-a-game-object-from-object-pool-in-unity
      * used as ref
      * Needed since perf degraded significantly after 30ish tubes spawned
+     * 
+     * POINT OF SCRIPT
+     * ---------------------
+     * Use a queue to enQ or dQ prefabs to save performance
+     *      Grow pool when no objects, make sure object is not ACTIVE
+     *      When return to pool, make sure object is not active!!!
+     *      Get from pool the object NEEDS TO BE ACTIVE 
+     * 
      */
 
     public GameObject prefab;   //Has a pool of prefabs for reuse

@@ -6,6 +6,15 @@ using TMPro;
 public class UIController : MonoBehaviour
 {
 
+    /*
+     * POINT OF SCRIPT
+     * ---------------------
+     * Display the score during game
+     * Display a game over screen that has the current score and high score
+     * Have a retry button that reloads the scene
+     * 
+     */
+
     public TextMeshProUGUI scoreText;
 
     public GameObject endScreen;

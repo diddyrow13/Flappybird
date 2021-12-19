@@ -10,6 +10,12 @@ public class SpawnTube : MonoBehaviour
      * https://stackoverflow.com/questions/25671746/coroutines-unity
      * used as ref for coroutines
      * Needed since perf degraded significantly after 30ish tubes spawned
+     * 
+     * POINT OF SCRIPT
+     * ---------------------
+     * Spawns the tubes prefab (2 tubes and score trigger) in a consistent interval
+     * Also stops the tubes from spawning after player dies by kiolling coroutine
+     * 
      */
 
     public ObjectPool pool;
@@ -56,6 +62,7 @@ public class SpawnTube : MonoBehaviour
         }
     }
 
+    // Needed to stop the tubes from spawning after player death
     private void onDeath()
     {
         StopAllCoroutines(); // prevents spawn of tubes

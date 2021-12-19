@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class TubeController : MonoBehaviour
 {
+    /*
+     * POINT OF SCRIPT
+     * ---------------------
+     * Controls the movement of the tubes (and score trigger) (direction and speed)
+     * as well as stopping on game over
+     */
 
     public float speed;
 
@@ -18,6 +24,7 @@ public class TubeController : MonoBehaviour
         transform.position += Vector3.left * (speed * Time.deltaTime);
     }
 
+    // Freezes the tubes that are on screen
     private void onDeath()
     {
         speed = 0f; // Stops the tunnels (on player death)

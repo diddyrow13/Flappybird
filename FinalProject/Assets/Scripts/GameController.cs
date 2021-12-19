@@ -6,6 +6,14 @@ using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
+    /*
+     * POINT OF SCRIPT
+     * ---------------------
+     * Have a single instance of the game (singleton)
+     * Use unity events to 
+     * Save the score if its a new high score
+     * Update the score when player does collect bonus or goest through tube trigger
+     */
 
     private static GameController myGame; //Singleton HAS TO BE STATIC
 
@@ -51,6 +59,7 @@ public class GameController : MonoBehaviour
     // Makes sure instance doesn't get created multiple times
     private void Awake()
     {
+        //Create instance if none exists
         if (myGame == null)
         {
             myGame = this;
@@ -59,14 +68,14 @@ public class GameController : MonoBehaviour
         //If not the right instance, destroy
         if (myGame != this)
         {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject); // Free memory
         }
 
         gameOver    = new UnityEvent();         //Create game over event
         scoreUpdate = new UnityEvent<int>();    //Create score update event
 
-        highScore = SaveSystem.LoadScore();
-        gameOver.AddListener(onPlayerDeath);
+        highScore = SaveSystem.LoadScore();     // Get the high score
+        gameOver.AddListener(onPlayerDeath);    // 
     }
 
     private void onPlayerDeath()

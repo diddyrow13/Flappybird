@@ -8,7 +8,12 @@ public class BonusSpawner : MonoBehaviour
      * 
      * https://stackoverflow.com/questions/25671746/coroutines-unity
      * used as ref for coroutines
-     * Needed since perf degraded significantly after 30ish tubes spawned
+     *
+     * POINT OF SCRIPT
+     * ---------------------
+     * Spawns a bonus sphere that gives the player a +5
+     * Stops the sphere(s) on game over
+     * 
      */
 
     public ObjectPool pool;
@@ -17,7 +22,6 @@ public class BonusSpawner : MonoBehaviour
     public float xPos, zPos;
     public float spawnChance;
 
-    //public ObjectPool scoreTrigPool;
 
 
     // Start is called before the first frame update
@@ -57,6 +61,7 @@ public class BonusSpawner : MonoBehaviour
         }
     }
 
+    // bonus' will continue to spawn unless this function is active
     private void onDeath()
     {
         StopAllCoroutines(); // prevents spawn of tubes

@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class CollisionController : MonoBehaviour
 {
+
+    /*
+     * POINT OF SCRIPT
+     * ---------------------
+     * Controls what happens when certain objects collide
+     *      oncollisionenter when player hits tube -> End the game
+     *      ontriggerenter 
+     *          when player passes through score trigger -> score +1
+     *          when player passes through bonus sphere  -> score +5
+     * 
+     */
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +48,7 @@ public class CollisionController : MonoBehaviour
             GameController.Instance.UpdateScore(1); // Increases score by 1
         }
 
-        if (gameObject.CompareTag("Bonus"))
+        if (other.CompareTag("Player") && gameObject.CompareTag("Bonus"))
         {
             // Despawn bonus object
             gameObject.SetActive(false);

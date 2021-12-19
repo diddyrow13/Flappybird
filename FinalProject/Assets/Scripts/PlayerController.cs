@@ -5,6 +5,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    /*
+     * POINT OF SCRIPT
+     * ---------------------
+     * controls player movement by
+     *      Creates artificial gravity by setting gravity type and val
+     *      Sets jump speed and type
+     *      Sets max jump height
+     *      Rotates player down after certain time not jumping
+     */
+
     Rigidbody rb;
 
     public float jumpForce;
@@ -57,6 +67,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Player is not alive so stop getting inputs in update function
     private void onDeath()
     {
         isAlive = false;

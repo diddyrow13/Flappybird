@@ -11,6 +11,11 @@ using System.IO;
  * https://docs.unity3d.com/ScriptReference/Application-persistentDataPath.html
  * located in: %userprofile%\AppData\LocalLow\<companyname>\<productname>
  * 
+ * 
+ * POINT OF SCRIPT
+ * ---------------------
+ * Save the score so it is persistent upon game loads
+ * 
  */
 
 

@@ -5,6 +5,13 @@ using UnityEngine;
 public class BonusController : MonoBehaviour
 {
 
+    /*
+     * POINT OF SCRIPT
+     * ---------------------
+     * Controls the movement of the bonus sphere (direction and speed)
+     * Also stops the movement of bonus spheres that are on spawned
+     */
+
     [SerializeField] private float speed = 2f;
     
     // Start is called before the first frame update
@@ -19,6 +26,8 @@ public class BonusController : MonoBehaviour
         transform.position += Vector3.left * (speed * Time.deltaTime);
     }
 
+
+    // Freezes the bonus' that are on screen
     private void onDeath()
     {
         speed = 0f; // Stops the tunnels (on player death)
