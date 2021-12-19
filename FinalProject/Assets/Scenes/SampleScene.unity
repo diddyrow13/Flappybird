@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: bdee1bab5b7d5654a9085651e052b3b7, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1621,7 +1621,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 05dd2f29d896e7c4bb53ca58a2c393d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2041,6 +2041,7 @@ MonoBehaviour:
   bonusMax: 17
   xPos: 30
   zPos: -0.8
+  spawnChance: 33
 --- !u!4 &1746643116
 Transform:
   m_ObjectHideFlags: 0
@@ -2208,6 +2209,14 @@ PrefabInstance:
     - target: {fileID: 1642163218103596752, guid: a4391d650e7be0046a1c7afb462c3f3c, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642163218103596754, guid: a4391d650e7be0046a1c7afb462c3f3c, type: 3}
+      propertyPath: m_Radius
+      value: 0.5038466
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642163218103596754, guid: a4391d650e7be0046a1c7afb462c3f3c, type: 3}
+      propertyPath: m_Center.y
+      value: -0.107417345
       objectReference: {fileID: 0}
     - target: {fileID: 1642163218103596757, guid: a4391d650e7be0046a1c7afb462c3f3c, type: 3}
       propertyPath: m_RootOrder

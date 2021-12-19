@@ -15,6 +15,7 @@ public class BonusSpawner : MonoBehaviour
     public float spawnTime; // Time in seconds between spawns
     public float bonusMin, bonusMax;
     public float xPos, zPos;
+    public float spawnChance;
 
     //public ObjectPool scoreTrigPool;
 
@@ -32,13 +33,27 @@ public class BonusSpawner : MonoBehaviour
         //Waits then spawns tunnels
         while (true)
         {
-            yield return new WaitForSeconds(spawnTime);
+            yield return new WaitForSeconds(spawnTime); //Stops and waits for timer
 
-            var bonusObj = pool.getFromPool(); //Grab obj from pool
+            // Get the spawn chance
+            var randNum = Random.Range(1, 100);
 
-            var yPos = Random.Range(bonusMin, bonusMax); //Random the height for spawn
+            if (randNum < spawnChance)
+            {
+                var bonusObj = pool.getFromPool(); //Grab obj from pool
 
-            bonusObj.transform.position = new Vector3(xPos, yPos, zPos); // Spawn
+                var yPos = Random.Range(bonusMin, bonusMax); //Random the height for spawn
+
+                bonusObj.transform.position = new Vector3(xPos, yPos, zPos); // Spawn
+            }
+            else
+                continue;
+
+            //var bonusObj = pool.getFromPool(); //Grab obj from pool
+
+            //var yPos = Random.Range(bonusMin, bonusMax); //Random the height for spawn
+
+            //bonusObj.transform.position = new Vector3(xPos, yPos, zPos); // Spawn
         }
     }
 

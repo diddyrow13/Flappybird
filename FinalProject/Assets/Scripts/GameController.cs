@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    // Update the score when the player 
+    // Update the score when the player does something (go through tube or bonus)
     public void UpdateScore(int org)
     {
         score += org;

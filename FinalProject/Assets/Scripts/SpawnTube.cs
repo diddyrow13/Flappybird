@@ -34,7 +34,7 @@ public class SpawnTube : MonoBehaviour
         //Waits then spawns tunnels
         while (true)
         {
-            yield return new WaitForSeconds(spawnTime);
+            yield return new WaitForSeconds(spawnTime); //Stops and waits for timer
 
             //var topTunnel = pool.getFromPool();
             //var botTunnel = pool.getFromPool();
