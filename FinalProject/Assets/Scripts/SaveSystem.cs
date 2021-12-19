@@ -7,6 +7,10 @@ using System.IO;
 /*
  * https://videlais.com/2021/02/24/using-binaryformatter-in-unity-to-save-and-load-game-data/
  * used as reference to save data
+ * 
+ * https://docs.unity3d.com/ScriptReference/Application-persistentDataPath.html
+ * located in: %userprofile%\AppData\LocalLow\<companyname>\<productname>
+ * 
  */
 
 

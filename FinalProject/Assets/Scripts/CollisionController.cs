@@ -30,10 +30,19 @@ public class CollisionController : MonoBehaviour
     //Seeing if the player has passed the score trigger plane
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !gameObject.CompareTag("Bonus"))
         {
             // Increase score
             GameController.Instance.UpdateScore(1); // Increases score by 1
+        }
+
+        if (gameObject.CompareTag("Bonus"))
+        {
+            // Despawn bonus object
+            gameObject.SetActive(false);
+
+            // Increase score
+            GameController.Instance.UpdateScore(5); // Increases score by 1
         }
     }
 }

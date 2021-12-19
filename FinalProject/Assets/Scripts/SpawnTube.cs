@@ -14,7 +14,7 @@ public class SpawnTube : MonoBehaviour
 
     public ObjectPool pool;
     public float spawnTime; // Time in seconds between spawns
-    public float gapSize;
+    //public float gapSize; //Depricated when combined tube to tubes
     public float tubeMin, tubeMax;
     public  float xPos, zPos;
 
