@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
      * Use unity events to 
      * Save the score if its a new high score
      * Update the score when player does collect bonus or goest through tube trigger
+     * Change the background music when player dies/ is alive
      */
 
     private static GameController myGame; //Singleton HAS TO BE STATIC
@@ -23,6 +24,10 @@ public class GameController : MonoBehaviour
     private int highScore = 0; // Defualt
 
     public UnityEvent<int> scoreUpdate;
+
+    public AudioClip backgroundMusic;
+    public AudioClip gameoverMusic;
+    private AudioController audiocontroller;
 
     public int HighScore // TODO CHECK FOR RACE CONDITION TODO
     {
@@ -71,6 +76,9 @@ public class GameController : MonoBehaviour
             Destroy(this.gameObject); // Free memory
         }
 
+        audiocontroller = FindObjectOfType<AudioController>();
+        audiocontroller.ChangeMusic(backgroundMusic);
+
         gameOver    = new UnityEvent();         //Create game over event
         scoreUpdate = new UnityEvent<int>();    //Create score update event
 
@@ -80,6 +88,7 @@ public class GameController : MonoBehaviour
 
     private void onPlayerDeath()
     {
+        audiocontroller.ChangeMusic(gameoverMusic);
         // Save high score if its higher than current high score
         if (score > highScore)
         {

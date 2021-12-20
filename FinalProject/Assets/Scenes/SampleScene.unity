@@ -1569,6 +1569,8 @@ MonoBehaviour:
   scoreUpdate:
     m_PersistentCalls:
       m_Calls: []
+  backgroundMusic: {fileID: 8300000, guid: b0d3940045c272a4e81f4c9fcafad6cb, type: 3}
+  gameoverMusic: {fileID: 8300000, guid: 0e3bc8d4fc355194b95f652ca1a8012f, type: 3}
 --- !u!1 &1562361713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,6 +2018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1709752744}
   - component: {fileID: 1709752743}
+  - component: {fileID: 1709752745}
   m_Layer: 0
   m_Name: Background Music
   m_TagString: Untagged
@@ -2133,6 +2136,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1709752745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709752742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6785ebc9c03254459668f1684df35c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundMusic: {fileID: 1709752743}
 --- !u!1 &1746643114
 GameObject:
   m_ObjectHideFlags: 0
